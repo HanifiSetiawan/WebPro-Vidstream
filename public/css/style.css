@@ -1,0 +1,122 @@
+
+
+/* Background */
+.bgindex {
+    min-height: 100vh;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.5) 80%, rgba(0, 0, 0, 0) 100%), url('img/bglandpage.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    overflow: hidden; 
+
+}
+
+.profileButton a{
+    width: 70px; 
+    height: 70px;
+    background-image: url('img/accountwhite.png');
+    background-size: cover;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+}
+
+.titleContent {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 70px; 
+    border-radius: 30px; 
+}
+
+.titleContent h1{
+    color: aliceblue;
+    font-size: 4em;
+    font-weight: bold;
+    margin-bottom: 5px; 
+    margin-top: 10px; 
+
+}
+
+.titleContent h2{
+    color: aliceblue;
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+}
+
+.titleContent a{
+    color: rgb(0, 0, 0);
+    font-size: 1em;
+    background-color: white;
+    padding:15px;
+    border-radius: 15px;
+    margin-top: 0px; 
+    text-decoration: none;
+    margin-top: 0px; 
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 75vh; /* 75% of the viewport height */
+    object-fit: cover; /* Cover the entire space */
+}
+
+.gradient-overlay {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.gradient-overlay img {
+    width: 100%;
+    height: 75vh;
+    object-fit: cover;
+}
+
+.gradient-overlay::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7)); /* Adjust the gradient colors and opacity as needed */
+}
+
+.imgsize {
+    width: 20vh;
+    height: auto;
+    object-fit: cover;
+}
+
+#Navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: top 0.5s;
+}
+
+.navbar-hide {
+    top: -100px;
+}
+
+.darken-on-hover {
+    transition: 0.3s ease;
+  }
+  
+.darken-on-hover:hover {
+    filter: brightness(60%);
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.8);  
+}
+
+.bottom-50 {
+    bottom: 50%;
+}
+
+.top-50 {
+    top: 50%;
+}
+  
