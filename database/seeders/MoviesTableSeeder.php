@@ -11,12 +11,12 @@ class MoviesTableSeeder extends Seeder
     public function run()
     {
         Movie::create([
-            'title' => 'Parasyte: The grey',
-            'genre' => 'Horror',
+            'title' => 'Kung Fu Panda 4',
+            'genre' => 'Comedy',
             'year' => 2024,
-            'description' => 'A group of mysterious parasitic creatures fall from outer space and begin using humans as hosts, killing them, and completely transforming them into unique creatures that can shapeshift their heads into anything.',
-            'poster' => 'img/moviepost/parasyte.jpg',
-            'video_path' => 'video/parasyte.mp4',
+            'description' => 'After escaping from the Battle of Reach, Captain Jacob Keyes and his crew, aboard the Halcyon-class battlecruiser The Pillar of Autumn, have discovered an ancient ring in an uncharted area of the universe. Soon after their discovery, they are attacked by several Covenant ships that had followed them from Reach. Their only option is to abandon ship, but not without a fight. Keyes orders their secret weapon to be awakened from cryo-sleep, Master Chief John: Spartan-117. He is, thought to be, the last of the super human soldiers created on Reach known as Spartans. After a noble fight, the Master Chief abandons the ship as well, taking Cortana with him, the A.I. heart of the Pillar of Autumn. He will soon be on a quest that will unveil many secrets about the ring, some of which should lay buried forever...',
+            'poster' => 'img/moviepost/kfp4.jpg',
+            'video_path' => 'video/kfp4.mp4',
         ]);
     }
 }
