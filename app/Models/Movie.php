@@ -11,4 +11,6 @@ class Movie extends Model
     protected $fillable = [
         'title', 'genre', 'year', 'description', 'poster', 'video_path'
     ];
+
+    protected $table = 'movies';
 }
