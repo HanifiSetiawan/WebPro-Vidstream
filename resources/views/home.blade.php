@@ -40,12 +40,42 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+        <h1 class="ms-5 mt-5 mb-3 text-white fw-normal">Trending</h1>
+        <div class="container-fluid">
+            @php $moviesCount = $movies->count(); @endphp
+            @for ($i = 0; $i < min(2, ceil($moviesCount / 7)); $i++)
+                <div class="row text-center text-white justify-content-center">
+                    @php
+                        $start = $i * 7;
+                        $end = min(($i + 1) * 7, $moviesCount);
+                    @endphp
+                    @foreach($movies->slice($start, $end - $start) as $movie)
+                        <div class="col mt-5 mb-3">
+                            <a href="{{ route('movie.play', $movie->id) }}">
+                                <img src="{{ asset($movie->poster) }}" alt="{{ $movie->title }}" class="imgsize rounded darken-on-hover">
+                            </a>
+                            <div class="mt-2 fs-7 fw-light">
+                                <h5>{{ $movie->title }}</h5>
+                                <p>{{ $movie->genre }} ({{$movie->year}})</p>
+                            </div>
+                        </div>
+                    @endforeach
+                    @if ($end - $start < 7)
+                        @for ($j = 0; $j < 7 - ($end - $start); $j++)
+                            <div class="col mt-5 mb-3"></div>
+                        @endfor
+                    @endif
+                </div>
+            @endfor
+        </div>
 </section>
 
 <!-- Add this script to show the pop-up -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <script>
     $(document).ready(function() {
         $('#loggedInAlert').modal('show');
     });
 </script>
+
 @endsection

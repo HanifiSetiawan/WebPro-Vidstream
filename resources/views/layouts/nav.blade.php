@@ -27,7 +27,7 @@
 </head>
 <body class="bg-black">
     <div id="app">
-        <nav class="navbar text-light navbar-expand-md navbar-black bg-black fixed-top" id="">
+        <nav class="navbar text-light navbar-expand-md navbar-black bg-black fixed-top" id="Navbar">
             <div class="container-fluid">
                 <a class="navbar-brand text-white" href="{{ url('/home') }}">
                     Vidlix
@@ -127,5 +127,23 @@
             @yield('content')
         </main>
     </div>
+    <script>
+        let lastScrollTop = 0;
+
+        window.addEventListener("scroll", function() {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                // Scroll Down
+                document.getElementById("Navbar").style.top = "-100px"; // Hides the navbar
+            } else {
+                // Scroll Up
+                document.getElementById("Navbar").style.top = "0"; // Shows the navbar
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>
