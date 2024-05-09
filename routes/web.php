@@ -1,8 +1,10 @@
 <?php
 
+use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\usercontroller;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\userdatacontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +29,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/edit-profile', [usercontroller::class, 'edit'])->name('edit.profile');
     Route::post('/update-profile', [usercontroller::class, 'update'])->name('update.profile');
 
-    Route::get('/movies/{movie}', [MovieController::class, 'play'])->name('movie.play');
+    Route::get('/movies/{title}', [MovieController::class, 'play'])->name('movie.play');
+});
+
+Route::middleware(['admin'])->group(function () {
+    Route::get('/user-database', [userdatacontroller::class, 'index'])->name('database');
 });

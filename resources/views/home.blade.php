@@ -51,7 +51,7 @@
                     @endphp
                     @foreach($movies->slice($start, $end - $start) as $movie)
                         <div class="col mt-5 mb-3">
-                            <a href="{{ route('movie.play', $movie->id) }}">
+                            <a href="{{ route('movie.play', $movie->title) }}">
                                 <img src="{{ asset($movie->poster) }}" alt="{{ $movie->title }}" class="imgsize rounded darken-on-hover">
                             </a>
                             <div class="mt-2 fs-7 fw-light">
