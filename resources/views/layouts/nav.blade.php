@@ -45,9 +45,9 @@
                             Movies
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark bg-dark">
-                                <li><a class="dropdown-item text-white" href="#">example 1</a></li>
-                                <li><a class="dropdown-item text-white" href="#">example 2</a></li>
-                                <li><a class="dropdown-item text-white" href="#">example 3</a></li>
+                                <li><a class="dropdown-item text-white bg-dark" href="#">example 1</a></li>
+                                <li><a class="dropdown-item text-white bg-dark" href="#">example 2</a></li>
+                                <li><a class="dropdown-item text-white bg-dark" href="#">example 3</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -56,9 +56,9 @@
                             TV Series
                             </a>
                             <ul class="dropdown-menu  bg-dark">
-                                <li><a class="dropdown-item text-white" href="#">example 1</a></li>
-                                <li><a class="dropdown-item text-white" href="#">example 2</a></li>
-                                <li><a class="dropdown-item text-white" href="#">example 3</a></li>
+                                <li><a class="dropdown-item text-white bg-dark" href="#">example 1</a></li>
+                                <li><a class="dropdown-item text-white bg-dark" href="#">example 2</a></li>
+                                <li><a class="dropdown-item text-white bg-dark" href="#">example 3</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -67,9 +67,9 @@
                             Genre
                             </a>
                             <ul class="dropdown-menu bg-dark">
-                                <li><a class="dropdown-item text-white" href="#">example 1</a></li>
-                                <li><a class="dropdown-item text-white" href="#">example 2</a></li>
-                                <li><a class="dropdown-item text-white" href="#">example 3</a></li>
+                                <li><a class="dropdown-item text-white bg-dark" href="#">example 1</a></li>
+                                <li><a class="dropdown-item text-white bg-dark" href="#">example 2</a></li>
+                                <li><a class="dropdown-item text-white bg-dark" href="#">example 3</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -110,6 +110,11 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    @if(session('isAdmin'))
+                                    <a class="dropdown-item text-white bg-dark" href="{{ route('database') }}">
+                                        Database
+                                    </a>
+                                    @endif
             
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

@@ -13,8 +13,13 @@ class MovieController extends Controller
         return $movies;
     }
 
-    public function play(Movie $movie)
+    public function play($title)
     {
+        $title = str_replace('-', ' ', $title);
+        
+        // Fetch the movie based on the title
+        $movie = Movie::where('title', $title)->firstOrFail();
+        
         return view('play', compact('movie'));
     }
     

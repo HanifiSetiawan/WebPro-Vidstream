@@ -40,7 +40,7 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <h1 class="ms-5 mt-5 mb-3 text-white fw-normal">Trending</h1>
+        <h1 class="ms-5 mt-5 mb-3 text-white fw-normal">Recently added</h1>
         <div class="container-fluid">
             @php $moviesCount = $movies->count(); @endphp
             @for ($i = 0; $i < min(2, ceil($moviesCount / 7)); $i++)
