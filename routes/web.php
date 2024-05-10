@@ -1,8 +1,10 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\usercontroller;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\formController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +31,13 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/movies/{movie}', [MovieController::class, 'play'])->name('movie.play');
 });
+
+Route::get('/form', function () {
+    return view('form');
+});
+
+Route::post('/submit-form', [formController::class, 'store'])->name('submit.form');
+Route::post('/submit-form-and-redirect', [formController::class, 'storeAndRedirect'])->name('submit.form.and.redirect');
+Route::post('/submit-form-and-redirect', [formController::class, 'storeAndRedirect'])->name('submit.form.and.redirect');
+
+

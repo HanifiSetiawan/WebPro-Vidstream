@@ -52,11 +52,12 @@
                     @foreach($movies->slice($start, $end - $start) as $movie)
                         <div class="col mt-5 mb-3">
                             <a href="{{ route('movie.play', $movie->id) }}">
-                                <img src="{{ asset($movie->poster) }}" alt="{{ $movie->title }}" class="imgsize rounded darken-on-hover">
+                                <!-- Update the src attribute to use the correct path -->
+                                <img src="{{ asset('storage/img/moviepost/' . basename($movie->poster)) }}" alt="{{ $movie->title }}" class="imgsize rounded darken-on-hover">
                             </a>
                             <div class="mt-2 fs-7 fw-light">
                                 <h5>{{ $movie->title }}</h5>
-                                <p>{{ $movie->genre }} ({{$movie->year}})</p>
+                                <p>{{ $movie->genre }} ({{ $movie->year }})</p>
                             </div>
                         </div>
                     @endforeach

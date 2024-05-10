@@ -15,7 +15,7 @@ class CreateMoviesTable extends Migration
             $table->integer('year');
             $table->text('description');
             $table->string('poster')->nullable(); // Store path to poster image
-            $table->string('video_path'); // Store path to the video file
+            $table->string('video_path')->nullable();
             $table->timestamps();
         });
     }

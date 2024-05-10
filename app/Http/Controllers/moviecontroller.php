@@ -17,4 +17,5 @@ class MovieController extends Controller
     {
         return view('play', compact('movie'));
     }
+    
 }
