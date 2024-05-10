@@ -28,29 +28,29 @@
                     <form action="{{ route('submit.form.and.redirect') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
                         @csrf
                         <div class="flex flex-col">
+                            <label for="poster" class="font-semibold">
+                                Poster Image:
+                            </label>
+                            <input type="file" name="poster" id="poster" accept="image/*" class="border rounded p-2 focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div class="flex flex-col">
                             <label for="video" class="font-semibold">
                                 Video:
                             </label>
                             <input type="file" name="video" id="video" accept="video/*" class="border rounded p-2 focus:outline-none focus:border-blue-500">
-                        </div>
-                        <div class="flex flex-col">
-                            <label for="video" class="font-semibold">
-                                Video:
-                            </label>
-                            <input type="file" name="video" id="video" accept="image/*" class="border rounded p-2 focus:outline-none focus:border-blue-500">
-                        </div>
+                        </div>  
                         <div class="flex flex-col">
                             <label for="title" class="font-semibold">
                                 Title:
                             </label>
-                            <input type="text" name="title" placeholder="Ex: F-22 Raptor" id="title" required class="border rounded p-2 focus:outline-none focus:border-blue-500">
+                            <input type="text" name="title" placeholder="Ex: Titanic" id="title" required class="border rounded p-2 focus:outline-none focus:border-blue-500">
                         </div>
 
                         <div class="flex flex-col">
                             <label for="genre" class="font-semibold">
                                 Genre:
                             </label>
-                            <input type="text" name="genre" placeholder="Ex: horror" id="genre" required class="border rounded p-2 focus:outline-none focus:border-blue-500">
+                            <input type="text" name="genre" placeholder="Ex: Horror, War, Historical" id="genre" required class="border rounded p-2 focus:outline-none focus:border-blue-500">
                         </div>
 
                         <div class="flex flex-col">
@@ -64,7 +64,7 @@
                             <label for="description" class="font-semibold">
                                 Description:
                             </label>
-                            <input type="text" name="description" placeholder="Ex: USA" id="description" required class="border rounded p-2 focus:outline-none focus:border-blue-500">
+                            <input type="text" name="description" placeholder="Ex: USA, Britain" id="description" required class="border rounded p-2 focus:outline-none focus:border-blue-500">
                         </div>
                         <button type="submit" class="bg-green-500 text-white font-semibold py-2 px-4 rounded hover:bg-green-600 focus:outline-none">Submit</button>
                     </form>

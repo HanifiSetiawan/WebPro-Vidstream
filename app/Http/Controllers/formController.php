@@ -34,13 +34,20 @@ class formController extends Controller
         } else {
             $posterPath = null;
         }
+        
+        if ($request->hasFile('video')) {
+            $videoPath = $request->file('video')->store('public/video');
+        } else {
+            $videoPath = null;
+        }
 
         Movie::create([
             'title' => $request->title,
             'genre' => $request->genre,
             'year' => $request->year,
             'description' => $request->description,
-            'poster' => $posterPath, // Store image path
+            'poster' => $posterPath,
+            'video' => $videoPath, 
         ]);
 
         return redirect('/home')->with('success', 'Successfully added!');
