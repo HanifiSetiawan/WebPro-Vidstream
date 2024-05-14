@@ -42,18 +42,20 @@
         </div>
         <h1 class="ms-5 mt-5 mb-3 text-white fw-normal">Recently added</h1>
         <div class="container-fluid">
-            @php $moviesCount = $movies->count(); @endphp
+            @php
+                $moviesCount = $sortedMovies->count();
+            @endphp
             @for ($i = 0; $i < min(2, ceil($moviesCount / 7)); $i++)
                 <div class="row text-center text-white justify-content-center">
                     @php
                         $start = $i * 7;
                         $end = min(($i + 1) * 7, $moviesCount);
                     @endphp
-                    @foreach($movies->slice($start, $end - $start) as $movie)
+                    @foreach($sortedMovies->slice($start, $end - $start) as $movie)
                         <div class="col mt-5 mb-3">
-                            <a href="{{ route('movie.play', $movie->id) }}">
+                            <a href="{{ route('movie.play', $movie->title) }}">
                                 <!-- Update the src attribute to use the correct path -->
-                                <img src="{{ asset('storage/img/moviepost/' . basename($movie->poster)) }}" alt="{{ $movie->title }}" class="imgsize rounded darken-on-hover">
+                                <img src="{{ asset($movie->poster) }}" class="imgsize rounded darken-on-hover">
                             </a>
                             <div class="mt-2 fs-7 fw-light">
                                 <h5>{{ $movie->title }}</h5>

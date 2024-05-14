@@ -25,6 +25,11 @@ class HomeController extends Controller
     public function index(MovieController $movieController)
     {
         $movies = $movieController->index();
-        return view('home', compact('movies'));
+
+        // Sort movies by creation date in descending order
+        $sortedMovies = $movies->sortByDesc('created_at');
+
+        // Pass sorted movies to the view
+        return view('home', compact('sortedMovies'));
     }
 }

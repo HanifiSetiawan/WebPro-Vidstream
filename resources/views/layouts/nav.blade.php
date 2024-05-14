@@ -114,6 +114,9 @@
                                     <a class="dropdown-item text-white bg-dark" href="{{ route('database') }}">
                                         Database
                                     </a>
+                                    <a class="dropdown-item text-white bg-dark" href="{{ route('form') }}">
+                                        Upload
+                                    </a>
                                     @endif
             
 

@@ -32,16 +32,17 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/movies/{title}', [MovieController::class, 'play'])->name('movie.play');
 });
 
-Route::get('/form', function () {
-    return view('form');
-});
+Route::get('/form', [formController::class, 'index'])->name('form');
+Route::post('/submit-form-and-redirect', [formController::class, 'storeAndRedirect'])->name('submit.form');
 
-Route::post('/submit-form', [formController::class, 'store'])->name('submit.form');
-Route::post('/submit-form-and-redirect', [formController::class, 'storeAndRedirect'])->name('submit.form.and.redirect');
-Route::post('/submit-form-and-redirect', [formController::class, 'storeAndRedirect'])->name('submit.form.and.redirect');
 
 
     
 Route::middleware(['admin'])->group(function () {
     Route::get('/user-database', [userdatacontroller::class, 'index'])->name('database');
+    Route::delete('/user/{id}', [userdatacontroller::class, 'destroy'])->name('user.delete');
+    Route::get('/user/{id}/edit', [userdatacontroller::class, 'edit'])->name('user.edit');
+    Route::put('/user/{id}', [userdatacontroller::class, 'update'])->name('user.update');
+
+
 });
