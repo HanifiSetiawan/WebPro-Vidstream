@@ -7,11 +7,19 @@ use app\Models\User;
 
 class userdatacontroller extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        if (session('isAdmin')) {
-            $users = User::all(); // Fetch all users from the database
-            return view('userdata', compact('users'));
+        if (session('isAdmin')) 
+        {
+            $query = $request->input('search');
+
+            $users = User::when($query, function ($q) use ($query){
+                $q->where('name', 'like', "%{$query}%");
+            })
+            ->orderBy('created_at', 'desc')
+            ->take(6) 
+            ->get();
+            return view('userdata', ['users' => $users, 'search' => $query]);
         } else {
             abort(403, 'Unauthorized');
         }
