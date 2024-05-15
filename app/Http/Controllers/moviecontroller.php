@@ -2,25 +2,36 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Movie;
+use App\Models\Comment;
+use Illuminate\Http\Request;
 
 class MovieController extends Controller
 {
-    public function index()
-    {
+    public function index(){
         $movies = Movie::all();
         return $movies;
     }
-
     public function play($title)
     {
-        $title = str_replace('-', ' ', $title);
-        
-        // Fetch the movie based on the title
         $movie = Movie::where('title', $title)->firstOrFail();
-        
-        return view('play', compact('movie'));
+        $comments = $movie->comments()->with('user')->get();
+
+        return view('play', compact('movie', 'comments'));
     }
-    
+
+    public function storeComment(Request $request, $movieId)
+    {
+        $request->validate([
+            'content' => 'required|string|max:1000',
+        ]);
+
+        Comment::create([
+            'movie_id' => $movieId,
+            'user_id' => auth()->id(),
+            'content' => $request->content,
+        ]);
+
+        return redirect()->back()->with('success', 'Comment added successfully!');
+    }
 }

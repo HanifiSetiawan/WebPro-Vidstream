@@ -34,9 +34,6 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/form', [formController::class, 'index'])->name('form');
 Route::post('/submit-form-and-redirect', [formController::class, 'storeAndRedirect'])->name('submit.form');
-
-
-
     
 Route::middleware(['admin'])->group(function () {
     Route::get('/user-database', [userdatacontroller::class, 'index'])->name('database');
@@ -46,3 +43,6 @@ Route::middleware(['admin'])->group(function () {
 
 
 });
+Route::get('/movies/{title}', [MovieController::class, 'play'])->name('movie.play');
+Route::post('/movies/{id}/comment', [MovieController::class, 'storeComment'])->name('movie.comment')->middleware('auth');
+
