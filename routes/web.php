@@ -6,6 +6,7 @@ use App\Http\Controllers\usercontroller;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\userdatacontroller;
 use App\Http\Controllers\formController;
+use App\Http\Controllers\moviedatacontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,5 +45,9 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/user/{id}/edit', [userdatacontroller::class, 'edit'])->name('user.edit');
     Route::put('/user/{id}', [userdatacontroller::class, 'update'])->name('user.update');
 
+    Route::get('/movie-database', [moviedatacontroller::class, 'index'])->name('movdatabase');
+    Route::delete('/movie/{id}', [moviedatacontroller::class, 'destroy'])->name('movie.delete');
 
+    Route::get('/movie-database/more', [moviedatacontroller::class, 'more'])->name('mov.showmore');
+    Route::get('/movie-database/less', [moviedatacontroller::class, 'less'])->name('mov.showless');
 });

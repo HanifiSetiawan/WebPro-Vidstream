@@ -112,7 +112,10 @@
                                     </a>
                                     @if(session('isAdmin'))
                                     <a class="dropdown-item text-white bg-dark" href="{{ route('database') }}">
-                                        Database
+                                        Users Database
+                                    </a>
+                                    <a class="dropdown-item text-white bg-dark" href="{{ route('movdatabase') }}">
+                                        Movies Database
                                     </a>
                                     <a class="dropdown-item text-white bg-dark" href="{{ route('form') }}">
                                         Upload
