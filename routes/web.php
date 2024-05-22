@@ -50,3 +50,5 @@ Route::middleware(['admin'])->group(function () {
 });
 Route::post('/movies/{id}/comment', [MovieController::class, 'storeComment'])->name('movie.comment')->middleware('auth');
 
+Route::get('/search', [MovieController::class, 'search'])->name('search');
+

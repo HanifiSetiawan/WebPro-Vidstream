@@ -76,11 +76,11 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                        <form class="d-flex " role="search">
+                        <form class="d-flex" role="search" method="GET" action="{{ route('search') }}">
                             <button type="submit" style="background-color: transparent; border:none; margin: 0; padding: 0; text-align: inherit; border-radius: 0; appearance: none;" class="mx-1">
                                 <img src="../img/search.png" alt="searchcon">
                             </button>
-                            <input class="form-control form-control-sm mt-1 me-5 col-xs-4" type="search" placeholder="Title, Genre, Year" aria-label="Search">
+                            <input class="form-control form-control-sm mt-1 me-5 col-xs-4" type="search" name="query" placeholder="Title, Genre, Year" aria-label="Search">
                         </form>
                         <!-- Authentication Links -->
                         @guest

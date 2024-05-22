@@ -34,4 +34,14 @@ class MovieController extends Controller
 
         return redirect()->back()->with('success', 'Comment added successfully!');
     }
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        $movies = Movie::where('title', 'LIKE', "%{$query}%")
+                       ->orWhere('genre', 'LIKE', "%{$query}%")
+                       ->get();
+
+        return view('search-result', compact('movies'));
+    }
 }
