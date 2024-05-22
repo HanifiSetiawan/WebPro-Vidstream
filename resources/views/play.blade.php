@@ -1,7 +1,7 @@
 @extends('layouts.nav')
 
 @section('content')
-    <div class="container">
+    <div class="container text-light mt-5">
         <h1>{{ $movie->title }}</h1>
         @auth
             <form action="{{ route('movie.comment', $movie->id) }}" method="POST">
@@ -10,12 +10,12 @@
                     <label for="content" class="form-label">Add a comment</label>
                     <textarea class="form-control" id="content" name="content" rows="3" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-outline-light">Submit</button>
             </form>
         @else
             <p><a href="{{ route('login') }}">Log in</a> to add a comment.</p>
         @endauth
-        <div class="comments">
+        <div class="mt-2">
             <h3>Comments</h3>
             @foreach($comments->Reverse() as $comment)
                 <div class="card mb-3" style="background-color: #333;">

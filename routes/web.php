@@ -48,6 +48,5 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/movie-database/more', [moviedatacontroller::class, 'more'])->name('mov.showmore');
     Route::get('/movie-database/less', [moviedatacontroller::class, 'less'])->name('mov.showless');
 });
-Route::get('/movies/{title}', [MovieController::class, 'play'])->name('movie.play');
 Route::post('/movies/{id}/comment', [MovieController::class, 'storeComment'])->name('movie.comment')->middleware('auth');
 

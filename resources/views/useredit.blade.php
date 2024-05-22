@@ -3,7 +3,7 @@
 @section('content')
     <div class="container mt-5 h-100">
         <div class="row h-100 justify-content-center align-items-center">
-            <div class="card border-light mb-3 bg-dark text-light">
+            <div class="card border-light mb-3 bg-black text-light">
                 <div class="card-header text-center borderl-light border-bottom">
                     <h1 class="card-title">Edit User</h1>
                 </div>
