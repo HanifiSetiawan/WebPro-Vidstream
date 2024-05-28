@@ -124,4 +124,35 @@
     width: 100px;
     height: auto;
 }
+
+.movie-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.movie-poster {
+    max-width: 100%;
+    height: auto;
+}
+
+.details-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.details-section p {
+    margin: 0;
+}
+
+.details-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.details-container .movie-poster {
+    margin-right: 20px;
+}
   
+.text-justify {
+    text-align: justify;
+}

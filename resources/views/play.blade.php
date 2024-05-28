@@ -4,13 +4,41 @@
     <div class="container text-light mt-5">
         <div class="card bg-dark">
             <div class="card-body text-light">
-                <div class="video-container">
+                <div class="video-container border-bottom">
                     <video width="100%" controls>
                         <source src="{{ asset($movie->video_path) }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                <h1>{{ $movie->title }}</h1>
+                <div class="row mt-4">
+                    <div class="col-md-8">
+                        <div class="container-fluid mw-100 border-end">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="{{ asset($movie->poster) }}" alt="Movie Poster" class="imgsize rounded img-responsive">
+                                </div>
+                                <div class="col-md-9 d-flex flex-column justify-content-between">
+                                    <h1 class="movie-title">{{ $movie->title }}</h1>
+                                    <div class="d-flex align-items-end">
+                                        <div class="details-section align-self-end fs-4">
+                                            <p><strong></strong> {{ $movie->genre }}</p>
+                                            <p><strong></strong> {{ $movie->year }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-3 mx-3 text-justify">{{ $movie->description }}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p><strong>Type:</strong> {{ $movie->type }}</p>
+                        <p><strong>Cast:</strong> cast</p>
+                        <p><strong>Director:</strong> director</p>
+                        <p><strong>Studios:</strong> studio</p>
+                        <p><strong>Episodes:</strong> episode</p>
+                        <p><strong>Duration:</strong> duration</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -27,7 +55,7 @@
         @else
             <p><a href="{{ route('login') }}">Log in</a> to add a comment.</p>
         @endauth
-        <div class="mt-2">
+        <div class="mt-4">
             <h3>Comments</h3>
             @foreach($comments as $comment)
                 <div class="mb-3 p-3 rounded" style="background-color: #1c1c1c;">
