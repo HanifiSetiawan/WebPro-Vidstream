@@ -15,9 +15,19 @@ class MovieController extends Controller
     public function play($title)
     {
         $movie = Movie::where('title', $title)->firstOrFail();
-        $comments = $movie->comments()->with('user')->get();
+        $comments = $movie->comments()->latest()->take(5)->get();
+        $showAll = false;
 
-        return view('play', compact('movie', 'comments'));
+        return view('play', compact('movie', 'comments', 'showAll'));
+    }
+    
+    public function playcommentall($title)
+    {
+        $movie = Movie::where('title', $title)->firstOrFail();
+        $comments = $movie->comments()->with('user')->latest()->take(20)->get();
+        $showAll = true;
+
+        return view('play', compact('movie', 'comments', 'showAll'));
     }
 
     public function storeComment(Request $request, $movieId)

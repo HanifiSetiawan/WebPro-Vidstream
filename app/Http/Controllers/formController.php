@@ -28,7 +28,9 @@ class formController extends Controller
                 'description' => 'required',
                 'poster' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image upload
                 'video_path' => 'required|mimes:mp4,mov,ogg,qt|max:204800',
-                'type' => 'required'
+                'type' => 'required',
+                'trending' => 'required',
+                'popular' => 'required'
             ], [
                 'title.required' => 'Title field is required',
                 'genre.required' => 'Genre field is required',
@@ -39,7 +41,9 @@ class formController extends Controller
                 'poster.max' => 'The image must be less than 2MB in size.',
                 'video_path.required' => 'video is required',
                 'video_path.mimes' => 'Only mp4 and MKV',
-                'type.required' => 'type is required'
+                'type.required' => 'type is required',
+                'trending.required' => 'trending is required',
+                'popular.required' => 'popular is required'
             ]);
     
             // Handle image upload and store the path
@@ -71,6 +75,8 @@ class formController extends Controller
                 'poster' => $posterimgpath.$postfilename,
                 'video_path' => $vidpath.$vidfilename, 
                 'type' => $request->type,
+                'trending' => $request->trending,
+                'popular' => $request->popular,
             ]);
     
             return view('success');

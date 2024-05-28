@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\commentController;
 use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\usercontroller;
@@ -7,6 +8,7 @@ use App\Http\Controllers\MovieController;
 use App\Http\Controllers\userdatacontroller;
 use App\Http\Controllers\formController;
 use App\Http\Controllers\moviedatacontroller;
+use App\Http\Controllers\MovnavController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +33,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/edit-profile', [usercontroller::class, 'edit'])->name('edit.profile');
     Route::post('/update-profile', [usercontroller::class, 'update'])->name('update.profile');
     Route::get('/movies/{title}', [MovieController::class, 'play'])->name('movie.play');
+    Route::get('/movies/{title}/comments', [MovieController::class, 'playcommentall'])->name('movie.comments.all');
+    
+    Route::get('/trending', [MovnavController::class, 'trending'])->name('movie.trending');
+    Route::get('/popular', [MovnavController::class, 'popular'])->name('movie.popular');
+    Route::get('/liked', [MovnavController::class, 'liked'])->name('movie.liked');
 });
 
 Route::get('/form', [formController::class, 'index'])->name('form');
@@ -44,6 +51,8 @@ Route::middleware(['admin'])->group(function () {
 
     Route::get('/movie-database', [moviedatacontroller::class, 'index'])->name('movdatabase');
     Route::delete('/movie/{id}', [moviedatacontroller::class, 'destroy'])->name('movie.delete');
+
+    Route::delete('/comment/{id}', [commentController::class, 'destroy'])->name('comment.delete');
 
     Route::get('/movie-database/more', [moviedatacontroller::class, 'more'])->name('mov.showmore');
     Route::get('/movie-database/less', [moviedatacontroller::class, 'less'])->name('mov.showless');

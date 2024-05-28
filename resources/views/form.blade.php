@@ -81,6 +81,28 @@
                             </div>
 
                             <div class="mb-3">
+                                <label for="trending" class="form-label">
+                                    Trending Status
+                                </label>
+                                <select class="form-select" name="trending" id="trending">
+                                    <option value="" {{ old('trending') == '' ? 'selected' : '' }}>-- Option --</option>
+                                    <option value="1" {{ old('trending') == '1' ? 'selected' : '' }}>1</option>
+                                    <option value="0" {{ old('trending') == '0' ? 'selected' : '' }}>0</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="popular" class="form-label">
+                                    Popular Status
+                                </label>
+                                <select class="form-select" name="popular" id="popular">
+                                    <option value="" {{ old('popular') == '' ? 'selected' : '' }}>-- Option --</option>
+                                    <option value="`1`" {{ old('popular') == '`1`' ? 'selected' : '' }}>1</option>
+                                    <option value="0" {{ old('popular') == '0' ? 'selected' : '' }}>0</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
                                 <label for="year" class="form-label">
                                     Year
                                 </label>

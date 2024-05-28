@@ -45,9 +45,9 @@
                             Movies
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark bg-dark">
-                                <li><a class="dropdown-item text-white bg-dark" href="#">example 1</a></li>
-                                <li><a class="dropdown-item text-white bg-dark" href="#">example 2</a></li>
-                                <li><a class="dropdown-item text-white bg-dark" href="#">example 3</a></li>
+                                <li><a class="dropdown-item text-white bg-dark" href="{{ route('movie.trending') }}">Trending</a></li>
+                                <li><a class="dropdown-item text-white bg-dark" href="{{ route('movie.popular') }}">Popular</a></li>
+                                <li><a class="dropdown-item text-white bg-dark" href="{{ route('movie.liked') }}">Most Likes</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
