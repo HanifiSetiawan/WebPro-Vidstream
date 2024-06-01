@@ -1,12 +1,14 @@
 <?php
 
 use App\Http\Controllers\commentController;
+use App\Http\Controllers\FooterController;
 use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\usercontroller;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\userdatacontroller;
 use App\Http\Controllers\formController;
+use App\Http\Controllers\GenreController;
 use App\Http\Controllers\moviedatacontroller;
 use App\Http\Controllers\MovnavController;
 use App\Http\Controllers\TvnavController;
@@ -35,6 +37,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/update-profile', [usercontroller::class, 'update'])->name('update.profile');
     Route::get('/movies/{title}', [MovieController::class, 'play'])->name('movie.play');
     Route::get('/movies/{title}/comments', [MovieController::class, 'playcommentall'])->name('movie.comments.all');
+
+    Route::post('/movies/{title}/like', [MovieController::class, 'likeMovie'])->name('movies.like');
+
+    Route::get('/about', [FooterController::class, 'about'])->name('about');
     
     Route::get('/movie-trending', [MovnavController::class, 'trending'])->name('movie.trending');
     Route::get('/movie-popular', [MovnavController::class, 'popular'])->name('movie.popular');
@@ -43,6 +49,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/tv-trending', [TvnavController::class, 'trending'])->name('tv.trending');
     Route::get('/tv-popular', [TvnavController::class, 'popular'])->name('tv.popular');
     Route::get('/tv-liked', [TvnavController::class, 'liked'])->name('tv.liked');
+
+    Route::get('/genre-action', [GenreController::class, 'action'])->name('genre.action');
+    Route::get('/genre-adventure', [GenreController::class, 'adventure'])->name('genre.adventure');
+    Route::get('/genre-comedy', [GenreController::class, 'comedy'])->name('genre.comedy');
+    Route::get('/genre-romance', [GenreController::class, 'romance'])->name('genre.romance');
+    Route::get('/genre-horror', [GenreController::class, 'horror'])->name('genre.horror');
+    Route::get('/genre-mystery', [GenreController::class, 'mystery'])->name('genre.mystery');
+    Route::get('/genre-drama', [GenreController::class, 'drama'])->name('genre.drama');
 });
 
 Route::get('/form', [formController::class, 'index'])->name('form');

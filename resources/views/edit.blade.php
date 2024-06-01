@@ -4,8 +4,8 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8 position-relative">
-                <div class="card top-50 bg-black text-light border-light">
+            <div class="col-md-8 position-relative" style="min-height: 80vh;">
+                <div class="card text-white border-light" style="top: 30%; background-color: #1A1110">
                     <div class="card-header border-bottom">{{ __('Edit Profile') }}</div>
 
                     <div class="card-body">

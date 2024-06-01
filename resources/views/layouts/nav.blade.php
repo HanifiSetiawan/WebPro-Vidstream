@@ -27,9 +27,9 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 </head>
-<body class="bg-black">
+<body style="background-color:#191919">
     <div id="app">
-        <nav class="navbar text-light navbar-expand-md navbar-black bg-black fixed-top" id="Navbar">
+        <nav class="navbar text-light navbar-expand-md navbar-black fixed-top" id="Navbar" style="background-color:#100C08">
             <div class="container-fluid">
                 <a class="navbar-brand text-white" href="{{ url('/home') }}">
                     <img src="../img/vidlix.png" alt="vidlix" height="24">
@@ -69,9 +69,13 @@
                             Genre
                             </a>
                             <ul class="dropdown-menu bg-dark">
-                                <li><a class="dropdown-item text-white bg-dark" href="#">example 1</a></li>
-                                <li><a class="dropdown-item text-white bg-dark" href="#">example 2</a></li>
-                                <li><a class="dropdown-item text-white bg-dark" href="#">example 3</a></li>
+                                <li><a class="dropdown-item text-white bg-dark" href="{{ route('genre.action') }}">Action</a></li>
+                                <li><a class="dropdown-item text-white bg-dark" href="{{ route('genre.comedy') }}">Comedy</a></li>
+                                <li><a class="dropdown-item text-white bg-dark" href="{{ route('genre.adventure') }}">Adventure</a></li>
+                                <li><a class="dropdown-item text-white bg-dark" href="{{ route('genre.romance') }}">Romance</a></li>
+                                <li><a class="dropdown-item text-white bg-dark" href="{{ route('genre.horror') }}">Horror</a></li>
+                                <li><a class="dropdown-item text-white bg-dark" href="{{ route('genre.mystery') }}">Mystery</a></li>
+                                <li><a class="dropdown-item text-white bg-dark" href="{{ route('genre.drama') }}">Drama</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -165,15 +169,23 @@
                 </div>
                 <div class="col-6 d-flex flex-column justify-content-between">
                     <p class="text-justify">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-                        distinctio earum repellat quaerat voluptatibus placeat nam,
-                        commodi optio pariatur est quia magnam eum harum corrupti dicta,
-                        aliquam sequi voluptate quas.
+                    Welcome to Vidlix, your favorite streaming website! Vidlix offers a seamless and immersive viewing experience with an extensive library of movies, TV shows, documentaries, and exclusive content. 
+                    Designed with user-friendly navigation and personalized recommendations, Vidlix ensures that you'll always find something to enjoy. 
+                    Whether you're into the latest blockbusters, timeless classics, or hidden gems, Vidlix caters to all your entertainment needs. 
+
+
+
+
+
+
+
                     </p>
                     
                     <div class="d-flex justify-content-end text-end mt-1 mx-2">
-                            <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover mx-2" href="#!">Contact</a>
-                            <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="#!">FAQ</a>
+                            <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover mx-1" href="/home">Home</a>
+                            <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover mx-1" href="{{ route('about') }}">About</a>
+                            <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover mx-1" href="#">Contact</a>
+                            <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover mx-1" href="#">FAQ</a>
                     </div>
                     
                 </div>

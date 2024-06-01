@@ -54,4 +54,15 @@ class MovieController extends Controller
 
         return view('search-result', compact('movies'));
     }
+
+    public function likeMovie($id)
+    {
+        $movie = Movie::find($id);
+        if ($movie) {
+            $movie->likes += 1;
+            $movie->save();
+            return response()->json(['likes' => $movie->likes], 200);
+        }
+        return response()->json(['message' => 'Movie not found'], 404);
+    }
 }

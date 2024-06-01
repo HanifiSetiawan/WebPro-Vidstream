@@ -15,30 +15,35 @@
                 $moviesCount = $movies->count();
             @endphp
             @if($moviesCount > 0)
-                @for ($i = 0; $i < ceil($moviesCount / 7); $i++)
-                    <div class="row text-center text-white justify-content-center">
-                        @php
-                            $start = $i * 7;
-                            $end = min(($i + 1) * 7, $moviesCount);
-                        @endphp
-                        @foreach($movies->slice($start, $end - $start) as $movie)
-                            <div class="col mt-5 mb-3">
+            @for ($i = 0; $i < min(2, ceil($moviesCount / 7)); $i++)
+                <div class="row text-white row-cols-auto">
+                    @php
+                        $start = $i * 7;
+                        $end = min(($i + 1) * 7, $moviesCount);
+                    @endphp
+                    @foreach($movies->slice($start, $end - $start) as $movie)
+                        <div class="col-sm mt-2 d-flex flex-column justify-content-start">
+                            <div class="container-sm">
                                 <a href="{{ route('movie.play', $movie->title) }}">
+                                    <!-- Update the src attribute to use the correct path -->
                                     <img src="{{ asset($movie->poster) }}" class="imgsize rounded darken-on-hover">
                                 </a>
-                                <div class="mt-2 fs-7 fw-light">
-                                    <h5>{{ $movie->title }}</h5>
-                                    <p>{{ $movie->genre }} ({{ $movie->year }})</p>
+                                <div class="d-flex align-items-start text-start">
+                                    <div class="details-section align-self-end">
+                                        <a href="{{ route('movie.play', $movie->title) }}" class="fs-6 mt-2 d-inline-block text-truncate link-light" style="max-width: 170px;">{{ $movie->title }}</a >
+                                        <p class="fs-6 fst-italic mb-3 " style="color: #b3b1b1">{{ $movie->genre }} ({{ $movie->year }})</p>
+                                    </div>
                                 </div>
                             </div>
-                        @endforeach
-                        @if ($end - $start < 7)
-                            @for ($j = 0; $j < 7 - ($end - $start); $j++)
-                                <div class="col mt-5 mb-3"></div>
-                            @endfor
-                        @endif
-                    </div>
-                @endfor
+                        </div>
+                    @endforeach
+                    @if ($end - $start < 7)
+                        @for ($j = 0; $j < 7 - ($end - $start); $j++)
+                            <div class="col mt-5 mb-3"></div>
+                        @endfor
+                    @endif
+                </div>
+            @endfor
             @else
                 <div class="row text-center text-white justify-content-center">
                     <div class="col mt-5 mb-3">

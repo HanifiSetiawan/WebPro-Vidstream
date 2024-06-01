@@ -2,12 +2,20 @@
 @extends('layouts.nav')
 
 @section('content')
-    @if($trending)
-        <h1 class="ms-5 mt-5 mb-3 text-white fw-normal">Trending TV Series</h1>
-    @elseif($popular)
-        <h1 class="ms-5 mt-5 mb-3 text-white fw-normal">Popular TV Series</h1>
-    @elseif($liked)
-        <h1 class="ms-5 mt-5 mb-3 text-white fw-normal">Most Liked TV Series</h1>
+    @if($action)
+        <h1 class="ms-5 mt-5 mb-3 text-white fw-normal">Action List</h1>
+    @elseif($adventure)
+        <h1 class="ms-5 mt-5 mb-3 text-white fw-normal">Adventure List</h1>
+    @elseif($comedy)
+        <h1 class="ms-5 mt-5 mb-3 text-white fw-normal">Comedy List</h1>
+    @elseif($romance)
+        <h1 class="ms-5 mt-5 mb-3 text-white fw-normal">Romance List</h1>
+    @elseif($horror)
+        <h1 class="ms-5 mt-5 mb-3 text-white fw-normal">Horror List</h1>
+    @elseif($mystery)
+        <h1 class="ms-5 mt-5 mb-3 text-white fw-normal">Mystery List</h1>
+    @elseif($drama)
+        <h1 class="ms-5 mt-5 mb-3 text-white fw-normal">Drama List</h1>
     @endif
     <div class="container-fluid">
         <div class="mx-5">

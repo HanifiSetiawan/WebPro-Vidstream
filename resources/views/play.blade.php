@@ -30,13 +30,23 @@
                         </div>
                         <p class="mt-3 mx-3 text-justify">{{ $movie->description }}</p>
                     </div>
-                    <div class="col-md-4">
-                        <p><strong>Type:</strong> {{ $movie->type }}</p>
-                        <p><strong>Cast:</strong> cast</p>
-                        <p><strong>Director:</strong> director</p>
-                        <p><strong>Studios:</strong> studio</p>
-                        <p><strong>Episodes:</strong> episode</p>
-                        <p><strong>Duration:</strong> duration</p>
+                    <div class="col-md-4 ">
+                        <div class="row">
+                            <p><strong>Type:</strong> {{ $movie->type }}</p>
+                            <p><strong>Cast:</strong> cast</p>
+                            <p><strong>Director:</strong> director</p>
+                            <p><strong>Studios:</strong> studio</p>
+                            <p><strong>Episodes:</strong> episode</p>
+                            <p><strong>Duration:</strong> duration</p>
+                        </div>
+                        <div class="row">
+                            <div class="d-flex justify-content-center" style="min-height: 20vh;">
+                                <div class="d-flex flex-column justify-content-center">
+                                    <button class="btn btn-outline-light" id="like-button" style="max-width: 70px;">Like</button>
+                                    <p class="text-center mt-2" id="likes-count">{{ $movie->likes }} Likes</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -104,4 +114,24 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#like-button').click(function() {
+            $.ajax({
+                url: '{{ route("movies.like", $movie->id) }}',
+                type: 'POST',
+                data: {
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function(response) {
+                    $('#likes-count').text(response.likes + ' Likes');
+                },
+                error: function(response) {
+                    alert('Error: ' + response.responseJSON.message);
+                }
+            });
+        });
+    });
+    </script>
 @endsection

@@ -189,7 +189,18 @@
   .social-icons .fa-github { background-color: #333; }
 
   .logosize {
-    width: 30vh;
+    width: 40vh;
     height: auto;
     object-fit: cover;
+}
+
+.text-white {
+    color: #f5f5f5;
+}
+
+.text-truncate-container {
+    width: 100%; /* Adjust width as necessary */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

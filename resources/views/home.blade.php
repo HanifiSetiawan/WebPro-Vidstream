@@ -41,25 +41,29 @@
             </button>
         </div>
         <div class="container-fluid">
-            <h1 class="mt-5 text-white fw-normal">Recently added</h1>
+            <h1 class="mt-5 ms-3 text-white fw-normal">Recently added</h1>
             @php
                 $moviesCount = $sortedMovies->count();
             @endphp
             @for ($i = 0; $i < min(2, ceil($moviesCount / 7)); $i++)
-                <div class="row text-center text-white justify-content-center">
+                <div class="row text-white row-cols-auto">
                     @php
                         $start = $i * 7;
                         $end = min(($i + 1) * 7, $moviesCount);
                     @endphp
                     @foreach($sortedMovies->slice($start, $end - $start) as $movie)
-                        <div class="col mt-5 mb-3">
-                            <a href="{{ route('movie.play', $movie->title) }}">
-                                <!-- Update the src attribute to use the correct path -->
-                                <img src="{{ asset($movie->poster) }}" class="imgsize rounded darken-on-hover">
-                            </a>
-                            <div class="mt-2 fs-7 fw-light">
-                                <h5>{{ $movie->title }}</h5>
-                                <p>{{ $movie->genre }} ({{ $movie->year }})</p>
+                        <div class="col-sm mt-2 d-flex flex-column justify-content-start">
+                            <div class="container-sm">
+                                <a href="{{ route('movie.play', $movie->title) }}">
+                                    <!-- Update the src attribute to use the correct path -->
+                                    <img src="{{ asset($movie->poster) }}" class="imgsize rounded darken-on-hover">
+                                </a>
+                                <div class="d-flex align-items-start text-start">
+                                    <div class="details-section align-self-end">
+                                        <a href="{{ route('movie.play', $movie->title) }}" class="fs-6 mt-2 d-inline-block text-truncate link-light" style="max-width: 170px;">{{ $movie->title }}</a >
+                                        <p class="fs-6 fst-italic mb-3 " style="color: #b3b1b1">{{ $movie->genre }} ({{ $movie->year }})</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     @endforeach
