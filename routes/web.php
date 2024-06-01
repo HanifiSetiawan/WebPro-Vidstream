@@ -9,6 +9,7 @@ use App\Http\Controllers\userdatacontroller;
 use App\Http\Controllers\formController;
 use App\Http\Controllers\moviedatacontroller;
 use App\Http\Controllers\MovnavController;
+use App\Http\Controllers\TvnavController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,9 +36,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/movies/{title}', [MovieController::class, 'play'])->name('movie.play');
     Route::get('/movies/{title}/comments', [MovieController::class, 'playcommentall'])->name('movie.comments.all');
     
-    Route::get('/trending', [MovnavController::class, 'trending'])->name('movie.trending');
-    Route::get('/popular', [MovnavController::class, 'popular'])->name('movie.popular');
-    Route::get('/liked', [MovnavController::class, 'liked'])->name('movie.liked');
+    Route::get('/movie-trending', [MovnavController::class, 'trending'])->name('movie.trending');
+    Route::get('/movie-popular', [MovnavController::class, 'popular'])->name('movie.popular');
+    Route::get('/movie-liked', [MovnavController::class, 'liked'])->name('movie.liked');
+
+    Route::get('/tv-trending', [TvnavController::class, 'trending'])->name('tv.trending');
+    Route::get('/tv-popular', [TvnavController::class, 'popular'])->name('tv.popular');
+    Route::get('/tv-liked', [TvnavController::class, 'liked'])->name('tv.liked');
 });
 
 Route::get('/form', [formController::class, 'index'])->name('form');

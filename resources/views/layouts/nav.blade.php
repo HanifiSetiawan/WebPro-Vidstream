@@ -18,9 +18,11 @@
     
     <!-- some library -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
@@ -30,7 +32,7 @@
         <nav class="navbar text-light navbar-expand-md navbar-black bg-black fixed-top" id="Navbar">
             <div class="container-fluid">
                 <a class="navbar-brand text-white" href="{{ url('/home') }}">
-                    Vidlix
+                    <img src="../img/vidlix.png" alt="vidlix" height="24">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -56,9 +58,9 @@
                             TV Series
                             </a>
                             <ul class="dropdown-menu  bg-dark">
-                                <li><a class="dropdown-item text-white bg-dark" href="#">example 1</a></li>
-                                <li><a class="dropdown-item text-white bg-dark" href="#">example 2</a></li>
-                                <li><a class="dropdown-item text-white bg-dark" href="#">example 3</a></li>
+                                <li><a class="dropdown-item text-white bg-dark" href="{{ route('tv.trending') }}">Trending</a></li>
+                                <li><a class="dropdown-item text-white bg-dark" href="{{ route('tv.popular') }}">Popular</a></li>
+                                <li><a class="dropdown-item text-white bg-dark" href="{{ route('tv.liked') }}">Most Likes</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -138,6 +140,59 @@
             @yield('content')
         </main>
     </div>
+
+    <!-- Footer -->
+    <footer class=" text-center text-white" style="background-color:#262626;">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <div class="container-sm border-bottom mb-4">
+                <ul class="social-icons mb-2">
+                    <li><a href="#" class="fab fa-facebook"></a></li>
+                    <li><a href="#" class="fab fa-twitter"></a></li>
+                    <li><a href="#" class="fab fa-google"></a></li>
+                    <li><a href="#" class="fab fa-instagram"></a></li>
+                    <li><a href="#" class="fab fa-linkedin"></a></li>
+                    <li><a href="#" class="fab fa-github"></a></li>
+                </ul>
+            </div>
+
+
+
+            <!-- Section: Text -->
+            <section class="row mb-4 justify-content-md-center ">
+                <div class="col-6">
+                    <img src="../img/logovid.png" class="logosize">
+                </div>
+                <div class="col-6 d-flex flex-column justify-content-between">
+                    <p class="text-justify">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+                        distinctio earum repellat quaerat voluptatibus placeat nam,
+                        commodi optio pariatur est quia magnam eum harum corrupti dicta,
+                        aliquam sequi voluptate quas.
+                    </p>
+                    
+                    <div class="d-flex justify-content-end text-end mt-1 mx-2">
+                            <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover mx-2" href="#!">Contact</a>
+                            <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="#!">FAQ</a>
+                    </div>
+                    
+                </div>
+            </section>
+            <!-- Section: Text -->
+
+
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2024 Copyright:
+            <a class="text-white" href="#!">Vidlix.com</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
     <script>
         let lastScrollTop = 0;
 
