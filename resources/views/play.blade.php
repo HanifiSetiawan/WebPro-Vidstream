@@ -37,7 +37,6 @@
                             <p><strong>Director:</strong> director</p>
                             <p><strong>Studios:</strong> studio</p>
                             <p><strong>Episodes:</strong> episode</p>
-                            <p><strong>Duration:</strong> duration</p>
                         </div>
                         <div class="row">
                             <div class="d-flex justify-content-center" style="min-height: 20vh;">
