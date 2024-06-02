@@ -37,7 +37,7 @@
             <tbody>
                 @foreach ($movies as $movie)
                     <tr>
-                        <td>{{ $movie->title }}</td>
+                        <td class="overflow-auto" style="max-width: 150px;">{{ $movie->title }}</td>
                         <td>{{ $movie->genre }}</td>
                         <td>{{ $movie->type }}</td>
                         <td class="text-truncate" style="max-width: 150px;">{{ $movie->description }}</td>

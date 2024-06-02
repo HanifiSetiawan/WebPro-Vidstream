@@ -103,6 +103,50 @@
                             </div>
 
                             <div class="mb-3">
+                                <label for="cast" class="form-label">
+                                    Casts 
+                                </label>
+                                <div class="row g-3">
+                                    <div class="col-md">
+                                        <input type="text" class="form-control" name="cast" id="cast" placeholder="Please input the casts" value="{{ old('cast') }}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="director" class="form-label">
+                                    Director
+                                </label>
+                                <div class="row g-3">
+                                    <div class="col-md">
+                                        <input type="text" class="form-control" name="director" id="director" placeholder="Please input the director" value="{{ old('director') }}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="studio" class="form-label">
+                                    Studio
+                                </label>
+                                <div class="row g-3">
+                                    <div class="col-md">
+                                        <input type="text" class="form-control" name="studio" id="studio" placeholder="Please input the studio" value="{{ old('studio') }}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="episode" class="form-label">
+                                    Episode
+                                </label>
+                                <div class="row g-3">
+                                    <div class="col-md">
+                                        <input type="text" class="form-control" name="episode" id="episode" placeholder="Please input the episode (number)" value="{{ old('episode') }}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
                                 <label for="year" class="form-label">
                                     Year
                                 </label>

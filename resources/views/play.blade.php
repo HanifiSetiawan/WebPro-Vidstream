@@ -33,10 +33,10 @@
                     <div class="col-md-4 ">
                         <div class="row">
                             <p><strong>Type:</strong> {{ $movie->type }}</p>
-                            <p><strong>Cast:</strong> cast</p>
-                            <p><strong>Director:</strong> director</p>
-                            <p><strong>Studios:</strong> studio</p>
-                            <p><strong>Episodes:</strong> episode</p>
+                            <p><strong>Cast:</strong> {{ $movie->cast }}</p>
+                            <p><strong>Director:</strong> {{ $movie->director }}</p>
+                            <p><strong>Studios:</strong> {{ $movie->studio }}</p>
+                            <p><strong>Episodes:</strong> {{ $movie->episode }}</p>
                         </div>
                         <div class="row">
                             <div class="d-flex justify-content-center" style="min-height: 20vh;">

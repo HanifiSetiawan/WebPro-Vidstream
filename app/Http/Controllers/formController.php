@@ -30,7 +30,12 @@ class formController extends Controller
                 'video_path' => 'required|mimes:mp4,mov,ogg,qt|max:204800',
                 'type' => 'required',
                 'trending' => 'required',
-                'popular' => 'required'
+                'popular' => 'required',
+                'cast' => 'required',
+                'director' => 'required',
+                'studio' => 'required',
+                'episode' => 'required',
+
             ], [
                 'title.required' => 'Title field is required',
                 'genre.required' => 'Genre field is required',
@@ -43,7 +48,11 @@ class formController extends Controller
                 'video_path.mimes' => 'Only mp4 and MKV',
                 'type.required' => 'type is required',
                 'trending.required' => 'trending is required',
-                'popular.required' => 'popular is required'
+                'popular.required' => 'popular is required',
+                'cast.required' => 'cast is required',
+                'director.required' => 'director is required',
+                'studio.required' => 'studio is required',
+                'episode.required' => 'episode is required'
             ]);
     
             // Handle image upload and store the path
@@ -77,6 +86,10 @@ class formController extends Controller
                 'type' => $request->type,
                 'trending' => $request->trending,
                 'popular' => $request->popular,
+                'cast' => $request->cast,
+                'director' => $request->director,
+                'studio' => $request->studio,
+                'episode' => $request->episode,
             ]);
     
             return view('success');

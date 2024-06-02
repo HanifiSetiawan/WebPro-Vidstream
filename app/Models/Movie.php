@@ -11,7 +11,7 @@ use App\Models\Comment;
 class Movie extends Model
 {
     protected $fillable = [
-        'title', 'genre', 'year', 'description', 'poster', 'video_path', 'type', 'trending', 'popular'
+        'title', 'genre', 'year', 'description', 'poster', 'video_path', 'type', 'trending', 'popular', 'cast', 'director', 'studio', 'episode'
     ];
     public function comments()
     {
