@@ -12,6 +12,7 @@ use App\Http\Controllers\GenreController;
 use App\Http\Controllers\moviedatacontroller;
 use App\Http\Controllers\MovnavController;
 use App\Http\Controllers\TvnavController;
+use App\Http\Controllers\EmailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +58,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/genre-horror', [GenreController::class, 'horror'])->name('genre.horror');
     Route::get('/genre-mystery', [GenreController::class, 'mystery'])->name('genre.mystery');
     Route::get('/genre-drama', [GenreController::class, 'drama'])->name('genre.drama');
+
+    Route::get('/Contact', [EmailController::class, 'index'])->name('Contact');
+    Route::post('/Contact/Sent', [EmailController::class, 'SendEmail'])->name('Contactsent');
 });
 
 Route::get('/form', [formController::class, 'index'])->name('form');

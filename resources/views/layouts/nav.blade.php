@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Vidlix</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -79,15 +79,17 @@
                             </ul>
                         </li>
                     </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <form class="d-flex" role="search" method="GET" action="{{ route('search') }}">
-                            <button type="submit" style="background-color: transparent; border:none; margin: 0; padding: 0; text-align: inherit; border-radius: 0; appearance: none;" class="mx-1">
+                    
+                    <div class="container-fluid">
+                        <form class="d-flex ms-auto" style="width: 35%;" role="search" method="GET" action="{{ route('search') }}">
+                            <button type="submit mt-1" style="background-color: transparent; border:none; margin: 0; padding: 0; text-align: inherit; border-radius: 0; appearance: none;" class="mx-1">
                                 <img src="../img/search.png" alt="searchcon">
                             </button>
-                            <input class="form-control form-control-sm mt-1 me-5 col-xs-4" type="search" name="query" placeholder="Title, Genre, Year" aria-label="Search">
+                            <input class="form-control form-control-sm mt-1 w-100" type="search" name="query" placeholder="Title, Genre, Year" aria-label="Search" style="border-radius: 15px;">
                         </form>
+                    </div>
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -172,19 +174,12 @@
                     Welcome to Vidlix, your favorite streaming website! Vidlix offers a seamless and immersive viewing experience with an extensive library of movies, TV shows, documentaries, and exclusive content. 
                     Designed with user-friendly navigation and personalized recommendations, Vidlix ensures that you'll always find something to enjoy. 
                     Whether you're into the latest blockbusters, timeless classics, or hidden gems, Vidlix caters to all your entertainment needs. 
-
-
-
-
-
-
-
                     </p>
                     
                     <div class="d-flex justify-content-end text-end mt-1 mx-2">
                             <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover mx-1" href="/home">Home</a>
                             <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover mx-1" href="{{ route('about') }}">About</a>
-                            <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover mx-1" href="#">Contact</a>
+                            <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover mx-1" href="{{ route('Contact') }}">Contact</a>
                             <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover mx-1" href="#">FAQ</a>
                     </div>
                     
