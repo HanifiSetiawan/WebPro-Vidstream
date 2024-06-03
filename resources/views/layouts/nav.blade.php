@@ -180,7 +180,6 @@
                             <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover mx-1" href="/home">Home</a>
                             <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover mx-1" href="{{ route('about') }}">About</a>
                             <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover mx-1" href="{{ route('Contact') }}">Contact</a>
-                            <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover mx-1" href="#">FAQ</a>
                     </div>
                     
                 </div>

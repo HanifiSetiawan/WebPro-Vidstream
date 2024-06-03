@@ -28,8 +28,10 @@ class HomeController extends Controller
 
         // Sort movies by creation date in descending order
         $sortedMovies = $movies->sortByDesc('created_at');
+        $movietype = $movies->where('type', 'Movie');
+        $tv = $movies->where('type', 'TV-Series');
 
         // Pass sorted movies to the view
-        return view('home', compact('sortedMovies'));
+        return view('home', compact('sortedMovies', 'movietype', 'tv'));
     }
 }
