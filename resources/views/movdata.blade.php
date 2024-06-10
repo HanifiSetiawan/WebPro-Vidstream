@@ -11,18 +11,8 @@
                 </div>
             </div>
         </form>
-        <div class="row">
-            <div class="d-flex justify-content-between my-2">
-                <a class="link-light ms-1" href="{{ route('mov.showless') }}">
-                    show less
-                </a>
-                <a class="link-light me-1" href="{{ route('mov.showmore') }}">
-                    show more
-                </a>
-            </div>
-        </div>
-        <table class="table table-striped table-dark table-wrap align-middle">
-        <thead>
+        <table class="table table-striped table-dark table-wrap align-middle mt-2">
+            <thead>
                 <tr>
                     <th>Title</th>
                     <th>Genre</th>
@@ -58,6 +48,9 @@
                 @endforeach
             </tbody>
         </table>
+    </div>
+    <div class="container">
+                {{ $movies->links() }}
     </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>

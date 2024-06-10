@@ -66,6 +66,7 @@
                                     <option value="Adventure" {{ old('genre') == 'Adventure' ? 'selected' : '' }}>Adventure</option>
                                     <option value="Romance" {{ old('genre') == 'Romance' ? 'selected' : '' }}>Romance</option>
                                     <option value="Horror" {{ old('genre') == 'Horror' ? 'selected' : '' }}>Horror</option>
+                                    <option value="Drama" {{ old('genre') == 'Drama' ? 'selected' : '' }}>Drama</option>
                                 </select>
                             </div>
 
@@ -97,7 +98,7 @@
                                 </label>
                                 <select class="form-select" name="popular" id="popular">
                                     <option value="" {{ old('popular') == '' ? 'selected' : '' }}>-- Option --</option>
-                                    <option value="`1`" {{ old('popular') == '`1`' ? 'selected' : '' }}>1</option>
+                                    <option value="1" {{ old('popular') == '1' ? 'selected' : '' }}>1</option>
                                     <option value="0" {{ old('popular') == '0' ? 'selected' : '' }}>0</option>
                                 </select>
                             </div>

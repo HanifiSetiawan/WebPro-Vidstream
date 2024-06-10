@@ -12,6 +12,7 @@ class MovieController extends Controller
         $movies = Movie::all();
         return $movies;
     }
+    
     public function play($title)
     {
         $movie = Movie::where('title', $title)->firstOrFail();

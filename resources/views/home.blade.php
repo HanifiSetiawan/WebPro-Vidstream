@@ -41,7 +41,14 @@
             </button>
         </div>
         <div class="container-fluid">
-            <h1 class="mt-5 ms-3 text-white fw-normal">Recently added</h1>
+            <div class="d-flex mt-5 ms-3 me-4">
+                <div class="me-auto">
+                    <h1 class="fw-normal text-white"> Recently Added</h1>
+                </div>
+                <div class="p-2 text-light">
+                    <a href="#">Show More</a>
+                </div>
+            </div>
             @php
                 $moviesCount = $sortedMovies->count();
             @endphp

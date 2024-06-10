@@ -16,8 +16,7 @@ class moviedatacontroller extends Controller
                 $q->where('title', 'like', "%{$query}%");
             })
             ->orderBy('created_at', 'desc')
-            ->take(6)
-            ->get(); 
+            ->paginate(7);
 
             return view('movdata', ['movies' => $movies, 'search' => $query]);
         } else {

@@ -88,7 +88,7 @@
 
 .imgsize {
     width: 20vh;
-    height: auto;
+    height: 250px;
     object-fit: cover;
 }
 
@@ -203,4 +203,26 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.pagination-dark .page-link {
+    background-color: black;
+    color: white;
+    border-color: black;
+}
+
+.pagination-dark .page-link:hover {
+    background-color: #444;
+    color: white;
+    border-color: #444;
+}
+
+.pagination-dark .page-item.disabled .page-link {
+    background-color: #333;
+    border-color: #333;
+}
+
+.pagination-dark .page-item.active .page-link {
+    background-color: #222;
+    border-color: #222;
 }

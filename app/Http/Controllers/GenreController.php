@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class GenreController extends Controller
 {
     public function action() {
-        $movies = Movie::where('genre', 'Action')->get();
+        $movies = Movie::where('genre', 'Action')->paginate(14);
         $action = true;
         $comedy = false;
         $adventure = false;
@@ -20,7 +20,7 @@ class GenreController extends Controller
     }
 
     public function comedy(){
-        $movies = Movie::where('genre', 'Comedy')->get();
+        $movies = Movie::where('genre', 'Comedy')->paginate(14);
         $action = false;
         $comedy = true;
         $adventure = false;
@@ -33,7 +33,7 @@ class GenreController extends Controller
     }
 
     public function adventure(){
-        $movies = Movie::where('genre', 'Adventure')->get();
+        $movies = Movie::where('genre', 'Adventure')->paginate(14);
         $action = false;
         $comedy = false;
         $adventure = true;
@@ -46,7 +46,7 @@ class GenreController extends Controller
     }
 
     public function romance(){
-        $movies = Movie::where('genre', 'Romance')->get();
+        $movies = Movie::where('genre', 'Romance')->paginate(14);
         $action = false;
         $comedy = false;
         $adventure = false;
@@ -59,7 +59,7 @@ class GenreController extends Controller
     }
 
     public function horror(){
-        $movies = Movie::where('genre', 'Horror')->get();
+        $movies = Movie::where('genre', 'Horror')->paginate(14);
         $action = false;
         $comedy = false;
         $adventure = false;
@@ -72,7 +72,7 @@ class GenreController extends Controller
     }
 
     public function mystery(){
-        $movies = Movie::where('genre', 'Mystery')->get();
+        $movies = Movie::where('genre', 'Mystery')->paginate(14);
         $action = false;
         $comedy = false;
         $adventure = false;
@@ -85,7 +85,7 @@ class GenreController extends Controller
     }
 
     public function drama(){
-        $movies = Movie::where('genre', 'Drama')->get();
+        $movies = Movie::where('genre', 'Drama')->paginate(14);
         $action = false;
         $comedy = false;
         $adventure = false;

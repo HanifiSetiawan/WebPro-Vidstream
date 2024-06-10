@@ -10,7 +10,7 @@ class MovnavController extends Controller
     public function trending() {
         $movies = Movie::where('trending', 1)
                        ->where('type', 'Movie')
-                       ->get();
+                       ->paginate(14);
         $trending = true;
         $popular = false;
         $liked = false;
@@ -20,7 +20,7 @@ class MovnavController extends Controller
     public function popular(){
         $movies = Movie::where('popular', 1)
                        ->where('type', 'Movie')
-                       ->get();
+                       ->paginate(14);
         $trending = false;
         $popular = true;
         $liked = false;
@@ -30,7 +30,7 @@ class MovnavController extends Controller
     public function liked(){
         $movies = Movie::where('type', 'Movie')
                         ->orderBy('likes', 'desc')
-                        ->get();
+                        ->paginate(14);
         $trending = false;
         $popular = false;
         $liked = true;
