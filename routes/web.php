@@ -13,6 +13,7 @@ use App\Http\Controllers\moviedatacontroller;
 use App\Http\Controllers\MovnavController;
 use App\Http\Controllers\TvnavController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\SmoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/recently-added', [SmoreController::class, 'Recently'])->name('recently');
+    Route::get('/movies', [SmoreController::class, 'movie'])->name('movie');
+    Route::get('/tv-series', [SmoreController::class, 'tv'])->name('tv');
+
     Route::get('/edit-profile', [usercontroller::class, 'edit'])->name('edit.profile');
     Route::post('/update-profile', [usercontroller::class, 'update'])->name('update.profile');
     Route::get('/movies/{title}', [MovieController::class, 'play'])->name('movie.play');
@@ -74,6 +79,9 @@ Route::middleware(['admin'])->group(function () {
 
     Route::get('/movie-database', [moviedatacontroller::class, 'index'])->name('movdatabase');
     Route::delete('/movie/{id}', [moviedatacontroller::class, 'destroy'])->name('movie.delete');
+    Route::get('/movies/{id}/edit', [moviedataController::class, 'edit'])->name('movie.edit');
+    Route::post('/movies/{id}', [moviedataController::class, 'update'])->name('movie.update');
+
 
     Route::delete('/comment/{id}', [commentController::class, 'destroy'])->name('comment.delete');
 

@@ -43,10 +43,10 @@
         <div class="container-fluid">
             <div class="d-flex mt-5 ms-3 me-4">
                 <div class="me-auto">
-                    <h1 class="fw-normal text-white"> Recently Added</h1>
+                    <h1 class="fw-normal text-white" style="font-family: lora;"> Recently Added</h1>
                 </div>
-                <div class="p-2 text-light">
-                    <a href="#">Show More</a>
+                <div class="p-2 text-light link-light">
+                    <a href="{{route('recently')}}" class="text-light">Show More</a>
                 </div>
             </div>
             @php
@@ -83,7 +83,14 @@
             @endfor
         </div>
         <div class="container-fluid">
-            <h1 class="mt-5 ms-3 text-white fw-normal">Movies</h1>
+            <div class="d-flex mt-5 ms-3 me-4">
+                <div class="me-auto">
+                    <h1 class="fw-normal text-white" style="font-family: lora;"> Movie</h1>
+                </div>
+                <div class="p-2 text-light link-light">
+                    <a href="{{route('movie')}}" class="text-light">Show More</a>
+                </div>
+            </div>
             @php
                 $moviesCount = $movietype->count();
             @endphp
@@ -118,7 +125,14 @@
             @endfor
         </div>
         <div class="container-fluid">
-            <h1 class="mt-5 ms-3 text-white fw-normal">TV Series</h1>
+            <div class="d-flex mt-5 ms-3 me-4">
+                <div class="me-auto">
+                    <h1 class="fw-normal text-white" style="font-family: lora;"> TV-Series</h1>
+                </div>
+                <div class="p-2 text-light link-light">
+                    <a href="{{route('tv')}}" class="text-light">Show More</a>
+                </div>
+            </div>
             @php
                 $moviesCount = $tv->count();
             @endphp

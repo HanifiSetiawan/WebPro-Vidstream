@@ -153,12 +153,10 @@
         <div class="container p-4">
             <div class="container-sm border-bottom mb-4">
                 <ul class="social-icons mb-2">
-                    <li><a href="#" class="fab fa-facebook"></a></li>
-                    <li><a href="#" class="fab fa-twitter"></a></li>
-                    <li><a href="#" class="fab fa-google"></a></li>
-                    <li><a href="#" class="fab fa-instagram"></a></li>
-                    <li><a href="#" class="fab fa-linkedin"></a></li>
-                    <li><a href="#" class="fab fa-github"></a></li>
+                    <li><a href="https://twitter.com/HanifiAS1" class="fab fa-twitter" target="_blank"></a></li>
+                    <li><a href="https://www.instagram.com/hanifi.setiawan/" class="fab fa-instagram" target="_blank"></a></li>
+                    <li><a href="https://www.linkedin.com/in/hanifi-abrar-setiawan" class="fab fa-linkedin" target="_blank"></a></li>
+                    <li><a href="https://github.com/HanifiSetiawan" class="fab fa-github" target="_blank"></a></li>
                 </ul>
             </div>
 

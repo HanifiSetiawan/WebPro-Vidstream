@@ -67,7 +67,7 @@
         <div class="mt-4">
             <h3>Comments</h3>
             @foreach($comments as $comment)
-                <div class="mb-3 p-3 rounded" style="background-color: #1c1c1c;">
+                <div class="mb-3 p-3 rounded" style="background-color: #232323;">
                     <div class="d-flex align-items-center text-white">
                         <span>{{ $comment->user->name }}</span>
                         <span class="ms-auto small text-muted">{{ $comment->created_at->diffForHumans() }}</span>

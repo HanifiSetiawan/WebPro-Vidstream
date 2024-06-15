@@ -37,7 +37,7 @@
                             <img class="foto" src="{{ asset($movie->poster) }}" alt="poster">
                         </td>
                         <td>
-                            <a href="" class="btn btn-outline-primary mb-2">Edit</a>
+                            <a href="{{ route('movie.edit', $movie->id) }}" class="btn btn-outline-primary mb-2">Edit</a>
                             <form action="{{ route('movie.delete', $movie->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')

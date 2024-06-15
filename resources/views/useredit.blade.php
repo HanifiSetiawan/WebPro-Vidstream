@@ -30,11 +30,15 @@
                         </div>
                         <div class="mb-3">
                             <label for="admin" class="form-label">Admin Status</label>
-                            <select name="admin" id="admin" class="form-select">
-                                <option value="" {{ old('admin') == '' ? 'selected' : '' }}>-- Option --</option>
-                                <option value="0" {{ old('admin') == 0 ? 'selected' : '' }}>No</option>
-                                <option value="1" {{ old('admin') == 1 ? 'selected' : '' }}>Yes</option>
-                            </select>
+                            <div class="row g-3"> 
+                                <div class="col-md">
+                                    <select name="admin" id="admin" class="form-select">
+                                        <option value="" {{ old('admin') == '' ? 'selected' : '' }}>-- Option --</option>
+                                        <option value="0" {{ old('admin') == 0 ? 'selected' : '' }}>No</option>
+                                        <option value="1" {{ old('admin') == 1 ? 'selected' : '' }}>Yes</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                         <!-- Add more fields as needed -->
                         <div class="card-footer text-body-secondary d-flex flex-column align-items-center justify-content-end text-light">
